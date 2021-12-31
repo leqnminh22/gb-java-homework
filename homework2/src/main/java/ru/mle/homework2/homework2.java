@@ -1,5 +1,7 @@
 package ru.mle.homework2;
 
+//check
+
 import java.util.Arrays;
 import java.util.Random;
 
