@@ -117,7 +117,7 @@ public class FirstApp {
             System.out.println(year + " is normal year");
         }
 
-// на проверку
+
     }
 
 }
