@@ -8,6 +8,7 @@ import java.util.Random;
 public class homework2 {
     public static void main(String[] args) {
 
+
         // 1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и условия заменить 0 на 1, 1 на 0;
 
         int[] arr01 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
@@ -31,8 +32,8 @@ public class homework2 {
         // 5. ** Задать одномерный массив и найти в нем минимальный и максимальный элементы (без помощи интернета);
 
         Random random = new Random();
-        int[] arr05 = new int [10];
-        for(int i = 0; i < arr05.length; i++)
+        int[] arr05 = new int[10];
+        for (int i = 0; i < arr05.length; i++)
             arr05[i] = random.nextInt(50);
         System.out.println(Arrays.toString(arr05));
 
@@ -41,8 +42,16 @@ public class homework2 {
 
         // 6. checkBalance
 
-        int [] arr06 = {11, 1, 2, 3, 4};
+        int[] arr06 = {3, 1, 2, 1, 1};
         System.out.println(checkBalance(arr06));
+
+        // 7.
+        int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println(Arrays.toString(a));
+        shift(a, 1254);
+        System.out.println(Arrays.toString(a));
+        shift(a, -6);
+        System.out.println(Arrays.toString(a));
 
     }
 
@@ -91,7 +100,7 @@ public class homework2 {
                     table[i][j] = 1;
                 } else {
 
-                    table[i][j] = (int)(Math.random()*10);
+                    table[i][j] = (int) (Math.random() * 10);
                 }
                 System.out.printf("%5d", table[i][j]);
             }
@@ -104,8 +113,8 @@ public class homework2 {
 
     public static int findMin(int[] array) {
         int min = array[0];
-        for (int i = 0; i < array.length; i++){
-            if(min > array[i]){
+        for (int i = 0; i < array.length; i++) {
+            if (min > array[i]) {
                 min = array[i];
             }
 
@@ -115,8 +124,8 @@ public class homework2 {
 
     public static int findMax(int[] array) {
         int max = array[0];
-        for (int i = 0; i < array.length; i++){
-            if(max < array[i]){
+        for (int i = 0; i < array.length; i++) {
+            if (max < array[i]) {
                 max = array[i];
             }
 
@@ -126,26 +135,38 @@ public class homework2 {
 
     // 6.
 
-    public static boolean checkBalance (int[] arr) {
-        int rightSum = 0;
-        int leftSum = 0;
+    public static boolean checkBalance(int[] arr) {
+        int sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            leftSum += arr[i];
-            for (int j = 0; j < arr.length; j++) {
-                if (j > i) {
-                    rightSum += arr[j];
-                } else {
-                    rightSum = 0;
-                }
-                if (leftSum == rightSum) {
-                    return true;
-                }
-            }
-
+            sum += arr[i];
+        }
+        if (sum % 2 != 0) return false;
+        int left = 0;
+        sum /= 2;
+        for (int i : arr) {
+            left += i;
+            if (left == sum) return true;
+            if (left > sum) return false;
         }
         return false;
+
+    }
+
+
+    // 7
+    static void shift(int[] arr, int n) {
+
+        int shift = (arr.length + n % arr.length) % arr.length; // реальное смещение;
+        for (int i = 0; i < shift; i++) {
+            int temp = arr[arr.length - 1]; // сохраняем значение последнего элемента массива
+            for(int j = arr.length - 1; j > 0; j--){
+                arr[j] = arr[j - 1]; // сохраняем значение текущего элемента массива с предыдущим
+            }
+            arr[0] = temp; // значение первого элемента получаем из temp
+        }
+
+
     }
 }
-
 
 
