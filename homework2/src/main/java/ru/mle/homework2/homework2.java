@@ -1,5 +1,7 @@
 package ru.mle.homework2;
 
+//check
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -36,6 +38,11 @@ public class homework2 {
 
         System.out.println("Максимальное значение массива: " + findMax(arr05));
         System.out.println("Минимальное значение массива: " + findMin(arr05));
+
+        // 6. checkBalance
+
+        int [] arr06 = {11, 1, 2, 3, 4};
+        System.out.println(checkBalance(arr06));
 
     }
 
@@ -115,6 +122,28 @@ public class homework2 {
 
         }
         return max;
+    }
+
+    // 6.
+
+    public static boolean checkBalance (int[] arr) {
+        int rightSum = 0;
+        int leftSum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            leftSum += arr[i];
+            for (int j = 0; j < arr.length; j++) {
+                if (j > i) {
+                    rightSum += arr[j];
+                } else {
+                    rightSum = 0;
+                }
+                if (leftSum == rightSum) {
+                    return true;
+                }
+            }
+
+        }
+        return false;
     }
 }
 
