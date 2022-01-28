@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
+//check
+
 public class Homework3 {
 
     static Scanner sc = new Scanner(System.in);
