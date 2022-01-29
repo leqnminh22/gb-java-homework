@@ -63,7 +63,7 @@ public class Homework3 {
                 switch (playAgain) {
                     case 1:
                         guessNumber();
-                        break;
+                        return;
 
                     case 0:
                         x = false;
