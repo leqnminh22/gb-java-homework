@@ -25,6 +25,7 @@ public class Employee {
     }
 
     public static void main(String[] args) {
+
         Employee[] emp = new Employee[5];
 
         emp[0] = new Employee("Lavrov Nikita", "IT", "lavrov@mail.ru", "9251232332", 100000, 32);
