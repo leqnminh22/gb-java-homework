@@ -106,5 +106,7 @@ class Dog extends Animal{
             System.out.printf("Собака: %s проплыл: %d метров.\n",name, swimDistance);
     }
 
+    // updated
+
 }
 
