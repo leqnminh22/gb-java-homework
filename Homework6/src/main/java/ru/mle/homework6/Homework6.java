@@ -12,13 +12,13 @@ public class Homework6 {
         dog01.run(499);
         dog01.swim(20);
 
-        Dog dog02 = new Dog("Shaggy");
-        dog02.run(550);
-        dog02.swim(5);
-
         Animal cat02 = new Cat("Troy");
         cat02.run(200);
         cat02.swim(10);
+
+        Dog dog02 = new Dog("Shaggy");
+        dog02.run(550);
+        dog02.swim(5);
 
         System.out.println();
 
@@ -27,6 +27,9 @@ public class Homework6 {
 }
 
 abstract class Animal {
+
+    private final int max_run_distance = 0;
+    private final int max_swim_distance = 0;
 
     protected String name;
     public int id;
@@ -54,6 +57,8 @@ abstract class Animal {
 
 class Cat extends Animal {
 
+    private final int max_run_distance = 200;
+
     Cat(String name){
         super(name);
     }
@@ -61,7 +66,7 @@ class Cat extends Animal {
     @Override
     public void run(int runDistance) {
 
-        if(runDistance > 200)
+        if(runDistance > max_run_distance)
             System.out.println("Кот устал.");
         else
             System.out.printf("Кот: %s пробежал: %dм.\n",name, runDistance);
@@ -70,10 +75,14 @@ class Cat extends Animal {
     @Override
     public void swim(int swimDistance) {
         System.out.println("Коты не умеют плавать.");
+
     }
 }
 
 class Dog extends Animal{
+
+    private final int max_run_distance = 500;
+    private final int max_swim_distance = 10;
 
     Dog(String name){
         super(name);
@@ -83,7 +92,7 @@ class Dog extends Animal{
     @Override
     public void run(int runDistance) {
 
-        if(runDistance > 500)
+        if(runDistance > max_run_distance)
             System.out.println("Собака устала.");
         else
             System.out.printf("Собака: %s пробежала: %d метров.\n", name, runDistance);
@@ -91,7 +100,7 @@ class Dog extends Animal{
 
     @Override
     public void swim(int swimDistance) {
-        if(swimDistance > 10)
+        if(swimDistance > max_swim_distance)
             System.out.printf("Собака: %s утонул.\n",name);
         else
         System.out.printf("Собака: %s проплыл: %d метров.\n",name, swimDistance);
