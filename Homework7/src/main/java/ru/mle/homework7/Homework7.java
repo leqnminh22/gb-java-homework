@@ -30,9 +30,8 @@ public class Homework7 {
         for (int i = 0; i < cats.length; i++) {
             if(cats[i].getSatiety() == false && cats[i].getAppetite() < plate.getFood()) {
                 cats[i].eat(plate);
-                System.out.println("Кот " + cats[i].getName() + " покушал." + " Cытость:" + cats[i].getSatiety());
                 cats[i].satiety = true;
-
+                System.out.println("Кот " + cats[i].getName() + " покушал." + " Cытость:" + cats[i].getSatiety());
             }
             else System.out.println("Кот " + cats[i].getName() + " не смог покушать.");
 
