@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a885479c-31f9-4add-bf45-97b4ddcd3e7b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/mle/homework3/Homework3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/mle/homework3/Homework3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Homework7/src/main/java/ru/mle/homework7/Homework7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../homework6" />
   </component>
   <component name="RunManager" selected="Application.Homework3">
     <configuration name="Homework3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

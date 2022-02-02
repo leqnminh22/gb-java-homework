@@ -21,15 +21,17 @@ public class Homework6 {
         dog02.swim(5);
 
         System.out.println();
-
-        System.out.println("Количество животных: "+ Animal.counter);
+        System.out.println();
+        System.out.println("Было создано " + Cat.counter + " котов");
+        System.out.println("Было создано " + Dog.counter + " собак");
+        System.out.println("Было создано " + Animal.counter + " животных");
     }
 }
 
 abstract class Animal {
 
-    private final int max_run_distance = 0;
-    private final int max_swim_distance = 0;
+    protected int max_run_distance = 0;
+    protected int max_swim_distance = 0;
 
     protected String name;
     public int id;
@@ -57,10 +59,13 @@ abstract class Animal {
 
 class Cat extends Animal {
 
-    private final int max_run_distance = 200;
+    public static int counter;
 
     Cat(String name){
+
         super(name);
+        max_run_distance = 200;
+        counter++;
     }
 
     @Override
@@ -81,11 +86,13 @@ class Cat extends Animal {
 
 class Dog extends Animal{
 
-    private final int max_run_distance = 500;
-    private final int max_swim_distance = 10;
+    public static int counter;
 
     Dog(String name){
         super(name);
+        max_run_distance = 500;
+        max_swim_distance = 10;
+        counter++;
 
     }
 
@@ -105,6 +112,8 @@ class Dog extends Animal{
         else
             System.out.printf("Собака: %s проплыл: %d метров.\n",name, swimDistance);
     }
+
+    // updated
 
 }
 
