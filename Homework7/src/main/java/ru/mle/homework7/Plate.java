@@ -15,7 +15,12 @@ public class Plate {
     }
 
     public void setFood(int food) {
-        this.food = food;
+        if(food >= 0) {
+            this.food = food;
+        }
+        else {
+            System.out.println("Еда закончилась.");
+        }
     }
 
     public void decreaseFood(int n){

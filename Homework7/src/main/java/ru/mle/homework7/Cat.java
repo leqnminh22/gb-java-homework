@@ -4,7 +4,7 @@ public class Cat {
 
     private String name;
     private int appetite;
-    protected boolean satiety;
+    private boolean satiety;
 
 
     public Cat(String name, int appetite){

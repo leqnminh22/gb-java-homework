@@ -28,12 +28,12 @@ public class Homework7 {
         Plate plate = new Plate(200);
 
         for (int i = 0; i < cats.length; i++) {
-            if(cats[i].getSatiety() == false && cats[i].getAppetite() < plate.getFood()) {
+            if(!cats[i].getSatiety() && cats[i].getAppetite() < plate.getFood()) {
                 cats[i].eat(plate);
-                cats[i].satiety = true;
+                cats[i].setSatiety(true);
                 System.out.println("Кот " + cats[i].getName() + " покушал." + " Cытость:" + cats[i].getSatiety());
             }
-            else System.out.println("Кот " + cats[i].getName() + " не смог покушать.");
+            else System.out.println("Кот " + cats[i].getName() + " не смог покушать."  + "Cытость: " + cats[i].getSatiety());
 
         }
         plate.info();
