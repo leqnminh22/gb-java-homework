@@ -6,25 +6,24 @@ public class Homework8 {
 
     public static void main(String[] args) {
 
-        Obstacle wall = new Wall();
         Obstacle track = new Track();
+        track.getLength();
+        Obstacle wall = new Wall();
+        wall.getHeight();
 
-        Runners[] players = new Runners[6];
-        players[0] = new Cat("Mars");
-        players[1] = new Robot("Atlas");
-        players[2] = new Human("Ares");
-        players[3] = new Robot("Jupiter");
-        players[4] = new Human("Mike");
-        players[5] = new Cat("Fluffy");
+        Obstacle[] obstacles = {track, wall};
 
+        Runners runners01 = new Cat("Mars");
+        Runners runners02 = new Robot("Atlas");
+        Runners runners03 = new Robot("Boris");
+        Runners runners04 = new Human("Jupiter");
+        Runners runners05 = new Human("Mike");
+        Runners runners06 = new Cat("Fluffy");
 
+        Runners[] runners = {runners01, runners02, runners03, runners04, runners05, runners06};
 
-        for (int i = 0; i < players.length; i++) {
-            players[i].run(track.getLength());{
-                for (int j = 0; j < players.length; j++) {
-                    players[j].jump(wall.getHeight());
-                }
-            }
+        for (int i = 0; i < runners.length; i++) {
+            runners[i].getOverObstacles(obstacles);
         }
     }
 
@@ -33,6 +32,15 @@ public class Homework8 {
         void run(int distance);
 
         void jump(int height);
+
+        default void getOverObstacles(Obstacle[] obstacle){
+            int trackLength = random.nextInt(250 - 150) + 150; // Рандомим длину дорожки
+            int wallHeight = random.nextInt(200 - 100) + 100; // Рандомим высоту стены
+
+                run(trackLength);
+                jump(wallHeight);
+
+        }
     }
 
     public interface Obstacle {
@@ -43,7 +51,7 @@ public class Homework8 {
 
     public static class Track implements Obstacle {
 
-        private int trackLength = random.nextInt(250 - 150) + 150;
+        private int trackLength = 400;
 
         public int getTrackLength() {
             return trackLength;
@@ -68,10 +76,6 @@ public class Homework8 {
     public static class Wall implements Obstacle {
 
         private int wallHeight = random.nextInt(200 - 100) + 100;
-
-        public int getWallHeight() {
-            return wallHeight;
-        }
 
         public void setWallHeight(int wallHeight) {
             this.wallHeight = wallHeight;

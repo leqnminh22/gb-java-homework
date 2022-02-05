@@ -3,8 +3,8 @@ public class Human implements Homework8.Runners {
 
 
     private String name;
-    private int maximum_run_distance = 220; // максимальное расстояние пробежки человека
-    private int maximum_jump_height = 150; // максимальное расстояние прыжка человека
+    public static int maximum_run_distance = 220; // максимальное расстояние пробежки человека
+    public static int maximum_jump_height = 150; // максимальное расстояние прыжка человека
 
     public Human(String name){
        this.name = name;
@@ -23,6 +23,7 @@ public class Human implements Homework8.Runners {
         if(distance <= maximum_run_distance) {
 
             System.out.printf("Человек %s пробежал дорожку в %d метров\n", name, distance);
+
         }
         else {
             System.out.printf("Для человека %s - это слишком большое расстояние. Длина дорожки - %d\n", name, distance);

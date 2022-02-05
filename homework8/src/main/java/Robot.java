@@ -2,8 +2,8 @@ public class Robot implements Homework8.Runners {
 
     private String name;
 
-    private int maximum_run_distance = 250; // максимальное расстояние пробежки робота
-    private int maximum_jump_height = 200; // максимальное расстояние прыжка робота
+    public static int maximum_run_distance = 250; // максимальное расстояние пробежки робота
+    public static int maximum_jump_height = 200; // максимальное расстояние прыжка робота
 
     public Robot(String name){
         this.name = name;    }
