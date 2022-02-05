@@ -25,16 +25,10 @@ public class Homework7 {
         cats[2] = new Cat("Муся", 60);
         cats[3] = new Cat("Женя", 150);
 
-        Plate plate = new Plate(200);
+        Plate plate = new Plate(10);
 
         for (int i = 0; i < cats.length; i++) {
-            if(!cats[i].getSatiety() && cats[i].getAppetite() < plate.getFood()) {
-                cats[i].eat(plate);
-                cats[i].setSatiety(true);
-                System.out.println("Кот " + cats[i].getName() + " покушал." + " Cытость:" + cats[i].getSatiety());
-            }
-            else System.out.println("Кот " + cats[i].getName() + " не смог покушать."  + "Cытость: " + cats[i].getSatiety());
-
+            cats[i].eat(plate);
         }
         plate.info();
 

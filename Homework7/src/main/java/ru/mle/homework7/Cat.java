@@ -1,5 +1,7 @@
 package ru.mle.homework7;
 
+import java.util.Random;
+
 public class Cat {
 
     private String name;
@@ -37,10 +39,20 @@ public class Cat {
         return name;
     }
 
+    private Random random = new Random();
+
     public void eat(Plate p) {
-        if (p.getFood() > appetite) {
-            p.decreaseFood(appetite);
-            satiety = true;
+        // Удаляем еду из миски в соответствии с аппетитом кота
+        if (p.decreaseFood(this.appetite)) { // Еды оказалось достаточно
+            System.out.println(this.name + " покушал в соответствии со своим аппетитом " + this.appetite);
+            // Кот насытился
+            this.satiety = true;
+        } else { // Еды оказалось недостаточно
+            // п.4 Считаем, что если коту мало еды в тарелке, то он её просто не трогает,
+            // то есть не может быть наполовину сыт (это сделано для упрощения логики программы).
+            System.out.println(this.name + " не будет есть эти крошки. Еды не хватило.");
+            p.increaseFood(random.nextInt(50) + 10);
+            eat(p);
         }
     }
 
