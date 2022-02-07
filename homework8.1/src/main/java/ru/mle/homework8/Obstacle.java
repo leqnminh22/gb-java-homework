@@ -5,4 +5,5 @@ public interface Obstacle {
     int getLength();
     int getHeight();
 
+
 }

@@ -6,6 +6,9 @@ public class Track implements Obstacle {
     private int trackLength = random.nextInt(301 - 100) + 100;
 
 
+    public void setTrackLength(int trackLength) {
+        this.trackLength = trackLength;
+    }
 
     @Override
     public int getLength() {
@@ -16,4 +19,5 @@ public class Track implements Obstacle {
     public int getHeight() {
         return 0;
     }
+
 }

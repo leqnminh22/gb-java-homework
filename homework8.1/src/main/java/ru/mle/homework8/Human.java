@@ -5,8 +5,8 @@ import static ru.mle.homework8.Homework8.random;
 public class Human implements Runners {
 
     private String name;
-    public int maximum_run_distance = 250;; // максимальное расстояние пробежки человека
-    public static int maximum_jump_height = 1; // максимальное высота прыжка человека
+    public int maximum_run_distance = random.nextInt(301 - 100) + 100; // максимальное расстояние пробежки человека
+    public static int maximum_jump_height = random.nextInt(301 - 100) + 100; // максимальное высота прыжка человека
 
     public Human(String name){
         this.name = name;
@@ -24,10 +24,10 @@ public class Human implements Runners {
     public boolean run(int distance) {
 
         if (distance > maximum_run_distance) {
-            System.out.printf("Для человека %s - это слишком большое расстояние. Длина дорожки - %d\n", name, distance);
+            System.out.printf("Участник %s не пробежит это расстояние. Длина дорожки: %d. MaxRunDistance: %d.\n",name, distance, maximum_run_distance );
             return false;
         }
-        System.out.printf("Человек %s пробежал дорожку в %d метров\n", name, distance);
+        System.out.printf("Участник %s пробежал дорожку. Длина дорожки: %d. MaxRunDistance: %d.\n",name, distance, maximum_run_distance);
         return true;
     }
 
@@ -36,11 +36,22 @@ public class Human implements Runners {
     public boolean jump(int height) {
 
         if (height > maximum_jump_height) {
-            System.out.printf("%s - это слишком высоко. Высота стены - %d см. \n", name, height);
+            System.out.printf("Участник %s не пробежит это расстояние. Высота препятствия: %d. MaxJumpDistance: %d.\n",name, height, maximum_jump_height);
             return false;
         }
-        System.out.printf("Человек %s перепрыгнул стену высотой %d см.\n", name, height);
+        System.out.printf("Участник %s перепрыгнул препятсвие. Высота препятствия: %d. MaxJumpDistance: %d.\n",name, height, maximum_run_distance);
         return true;
     }
+    @Override
+    public int getDistance() {
+        return maximum_run_distance;
+
+    }
+
+    @Override
+    public int getHeight() {
+        return maximum_jump_height;
+    }
+
 
 }
