@@ -42,24 +42,12 @@ public class Cat implements Runners {
     public boolean jump(int height) {
 
         if (height > maximum_jump_height) {
-            System.out.printf("Кот %s не пробежит это расстояние. Высота препятствия: %d. MaxJumpDistance: %d.\n",name, height, maximum_jump_height);
+            System.out.printf("Кот %s не перепрыгнет. Высота препятствия: %d. MaxJumpDistance: %d.\n",name, height, maximum_jump_height);
             return false;
         }
         System.out.printf("Кот %s перепрыгнул препятсвие. Высота препятствия: %d. MaxJumpDistance: %d.\n",name, height, maximum_run_distance);
         return true;
     }
-
-    @Override
-    public int getDistance() {
-        return maximum_run_distance;
-
-    }
-
-    @Override
-    public int getHeight() {
-        return maximum_jump_height;
-    }
-
 
 }
 

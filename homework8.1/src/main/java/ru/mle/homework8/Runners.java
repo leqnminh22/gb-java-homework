@@ -5,7 +5,5 @@ public interface Runners {
     boolean run(int distance);
     boolean jump(int height);
 
-    int getDistance();
-    int getHeight();
 
 }

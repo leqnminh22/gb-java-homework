@@ -24,21 +24,18 @@ public class Homework8 {
 
         Runners[] runners = {runners01, runners02, runners03, runners04, runners05, runners06};
 
-        for (Runners r: runners){
-            if (x < r.getDistance()) {
-                r.run(x);
-                r.jump(y);
-                System.out.println();
-            }
-            else {
-                System.out.printf("Участник не сможет учавствовать в забеге.\n");
-                System.out.println();
-            }
 
+        for (int i = 0; i < runners.length; i++) {
+            for (int j = 0; j < obstacles.length; j++) {
 
+                if (obstacles[j] instanceof Track)
+                    runners[i].run(obstacles[j].getLength());
+                else
+                    runners[i].jump(obstacles[j].getHeight());
+            }
         }
-
     }
-
 }
+
+
 
