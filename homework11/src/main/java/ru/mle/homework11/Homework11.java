@@ -1,17 +1,5 @@
 package ru.mle.homework11;
 
-<<<<<<< HEAD
-public class Homework11 {
-
-    public static void main(String[] args) {
-
-    }
-
-
-
-
-}
-=======
 import java.util.Arrays;
 import java.util.List;
 
@@ -61,5 +49,3 @@ public class Homework11 {
         return Arrays.asList(array);
     }
 }
-
->>>>>>> lessson-11
