@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Homework11 {
 
-
     public static void main(String[] args) {
 
         String[] words = {"angel", "boy", "sport", "ball", "world", "lights"};
