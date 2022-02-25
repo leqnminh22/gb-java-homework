@@ -36,15 +36,27 @@ public class Homework12 {
         System.arraycopy(arr, HALF, arr2, 0, HALF);
 
 
-        new Thread(() -> {
-                float[] a1 = calculate(arr1);
-                System.arraycopy(a1, 0, arr1, 0, a1.length);
-            }).start();
+        Thread t1 = new Thread(() -> {
+            float[] a1 = calculate(arr1);
+            System.arraycopy(a1,0,arr1, 0, a1.length);
+        });
 
-        new Thread(() -> {
+        Thread t2 = new Thread(() -> {
             float[] a2 = calculate(arr2);
-            System.arraycopy(a2, 0, arr2, 0, a2.length);
-            }).start();
+            System.arraycopy(a2,0,arr2, 0, a2.length);
+        });
+
+        t1.start();
+        t2.start();
+
+        try {
+            t1.join();
+            t2.join();
+        }
+
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
             System.arraycopy(arr1, 0, arr, 0, HALF);
             System.arraycopy(arr2, 0, arr, HALF, HALF);
